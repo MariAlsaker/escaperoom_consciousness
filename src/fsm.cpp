@@ -136,7 +136,7 @@ void loop() {
       digitalWrite(FX_PNEUMOTHORAX_BREATHING, LOW);
 
       // Pneumothorax correct
-      if(digitalRead(PNEUMOTHORAX_IN))
+      if(!digitalRead(PNEUMOTHORAX_IN))
       {
         digitalWrite(FX_PNEUMOTHORAX_BREATHING, HIGH);
         trigger_sound(FX_PNEUMOTHORAX_DONE);
@@ -154,7 +154,7 @@ void loop() {
       digitalWrite(FX_BLEEDING, LOW); // Can be done once
 
       // Bleeding stopped
-      if(digitalRead(BLEEDING_IN))
+      if(!digitalRead(BLEEDING_IN))
       {
         digitalWrite(FX_BLEEDING, HIGH);
         Serial.println("Transitioning to IDLE state \n");
